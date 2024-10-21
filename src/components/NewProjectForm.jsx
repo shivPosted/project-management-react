@@ -5,13 +5,17 @@ import Button from "./Button";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function NewProjectForm({ setProjects }) {
+export default function NewProjectForm({
+  setProjects,
+  setCurrentProject,
+  setCreateProject,
+}) {
   const [title, setTitle] = useState("");
   const [projectDes, setProjectDes] = useState("");
   const [date, setDate] = useState(new Date());
 
   function handleSave() {
-    if (title && projectDes)
+    if (title && projectDes) {
       setProjects((cur) => {
         if (cur.find((obj) => obj.title === title)) return cur;
         else
@@ -19,13 +23,16 @@ export default function NewProjectForm({ setProjects }) {
             ...cur,
             {
               title,
-              projectDes,
+              description: projectDes,
               date: date.toISOString(),
               tasks: [],
               id: crypto.randomUUID(),
             },
           ];
       });
+      setCurrentProject(null);
+      setCreateProject(false);
+    }
   }
   return (
     <form action="#" onSubmit={(e) => e.preventDefault()}>

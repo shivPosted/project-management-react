@@ -38,19 +38,32 @@ import MainView from "./components/MainView";
 import NewProjectForm from "./components/NewProjectForm";
 import Button from "./components/Button";
 import ProjectList from "./components/ProjectList";
+import Project from "./components/Project";
 
 function App() {
   const [projects, setProjects] = useState([]);
   const [currentProject, setCurrentProject] = useState(null);
-  const [createProject, setCreateProject] = useState(true);
+  const [createProject, setCreateProject] = useState(false);
 
   return (
     <main>
-      <Sidebar>
-        <ProjectList projects={projects} />
+      <Sidebar
+        setCreateProject={setCreateProject}
+        setCurrentProject={setCurrentProject}
+      >
+        <ProjectList
+          projects={projects}
+          setCurrentProject={setCurrentProject}
+        />
       </Sidebar>
-      {createProject ? (
-        <NewProjectForm setProjects={setProjects} />
+      {currentProject ? (
+        <Project project={currentProject} setProjects={setProjects} />
+      ) : createProject ? (
+        <NewProjectForm
+          setProjects={setProjects}
+          setCurrentProject={setCurrentProject}
+          setCreateProject={setCreateProject}
+        />
       ) : (
         <MainView currentProject={currentProject}>
           <Button onclick={() => setCreateProject(true)}>

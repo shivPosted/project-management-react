@@ -1,14 +1,18 @@
-import { useState } from "react";
 import styles from "./Sidebar.module.css";
-import ProjectList from "./ProjectList";
 
-export default function Sidebar({ children }) {
-  const [projects, setProjects] = useState([]);
-
+export default function Sidebar({
+  children,
+  setCreateProject,
+  setCurrentProject,
+}) {
+  function handleClick() {
+    setCreateProject(true);
+    setCurrentProject(null);
+  }
   return (
     <section className={styles.sidebar}>
       <h2>your projects</h2>
-      <button>+ Add Project</button>
+      <button onClick={handleClick}>+ Add Project</button>
       {children}
     </section>
   );
