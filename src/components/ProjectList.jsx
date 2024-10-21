@@ -1,9 +1,9 @@
 import styles from "./Projectlist.module.css";
-export default function ProjectList() {
+export default function ProjectList({ projects }) {
   return (
     <ul className={styles.projectList}>
-      {Array.from({ length: 5 }, (_, i) => (
-        <li key={i + 1}>Project {i + 1}</li>
+      {projects.map((project) => (
+        <li key={project.id}>{project.title}</li>
       ))}
     </ul>
   );

@@ -35,15 +35,29 @@
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import MainView from "./components/MainView";
+import NewProjectForm from "./components/NewProjectForm";
+import Button from "./components/Button";
+import ProjectList from "./components/ProjectList";
 
 function App() {
   const [projects, setProjects] = useState([]);
   const [currentProject, setCurrentProject] = useState(null);
+  const [createProject, setCreateProject] = useState(true);
 
   return (
     <main>
-      <Sidebar />
-      <MainView currentProject={currentProject} />
+      <Sidebar>
+        <ProjectList projects={projects} />
+      </Sidebar>
+      {createProject ? (
+        <NewProjectForm setProjects={setProjects} />
+      ) : (
+        <MainView currentProject={currentProject}>
+          <Button onclick={() => setCreateProject(true)}>
+            Create New Project
+          </Button>
+        </MainView>
+      )}
     </main>
   );
 }
