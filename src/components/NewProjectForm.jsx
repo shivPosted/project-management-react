@@ -40,13 +40,18 @@ export default function NewProjectForm({
   }
 
   return (
-    <form action="#" onSubmit={(e) => e.preventDefault()}>
+    <form
+      action="#"
+      onSubmit={(e) => e.preventDefault()}
+      className={styles.form}
+    >
       <div className={styles.row}>
         <label htmlFor="project-title">Title</label>
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          id="project-title"
         />
       </div>
       <div className={styles.row}>
@@ -55,14 +60,26 @@ export default function NewProjectForm({
           type="text"
           value={projectDes}
           onChange={(e) => setProjectDes(e.target.value)}
+          id="project-desription"
         />
       </div>
       <div className={styles.row}>
-        <DatePicker selected={date} onChange={(date) => setDate(date)} />
+        <label htmlFor="date-picker">Date</label>
+        <DatePicker
+          selected={date}
+          onChange={(date) => setDate(date)}
+          id="date-picker"
+          className={styles.date}
+        />
       </div>
       <div className={styles.row}>
-        <button onClick={handleCancel}>cancel</button>
-        <Button onclick={handleSave}> Save </Button>
+        <Button type="secondary" onclick={handleCancel}>
+          cancel
+        </Button>
+        <Button onclick={handleSave} type="primary">
+          {" "}
+          Save{" "}
+        </Button>
       </div>
     </form>
   );

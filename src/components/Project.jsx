@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Button from "./Button";
 
 export default function Project({ project, setProjects, setCurrentProject }) {
   const [inputTask, setInputTask] = useState("");
@@ -49,7 +50,9 @@ export default function Project({ project, setProjects, setCurrentProject }) {
           onChange={(e) => setInputTask(e.target.value)}
           ref={ref}
         />
-        <button onClick={handleAddTask}>Add task</button>
+        <Button type="secondary" onclick={handleAddTask}>
+          Add task
+        </Button>
         <ul>
           {tasks.map((task, i) => (
             <Task
@@ -65,7 +68,9 @@ export default function Project({ project, setProjects, setCurrentProject }) {
         </ul>
       </div>
       <div>
-        <button onClick={handleDelelte}>Delete</button>
+        <Button type="primary" onclick={handleDelelte}>
+          Delete
+        </Button>
       </div>
     </div>
   );

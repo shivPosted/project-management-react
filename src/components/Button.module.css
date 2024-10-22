@@ -2,16 +2,25 @@
   border: none;
   outline: none;
   padding: 1.2rem 2.4rem;
-  background-color: #333;
   cursor: pointer;
-  color: #f7f7f7;
   font-size: 1.6rem;
   font-weight: 500;
   border-radius: 0.6rem;
   transition: all 0.3s ease-in;
 }
 
-.btn:hover {
+.primary {
+  color: #f7f7f7;
+  background-color: #333;
+}
+.primary:hover {
   background-color: #555;
   color: #fff;
+}
+.secondary {
+  color: #333;
+  background-color: transparent;
+}
+.secondary:hover {
+  background-color: #e1dfdd;
 }

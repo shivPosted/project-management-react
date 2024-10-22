@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.2rem;
+  width: 80%;
+  margin: 3.2rem auto;
+}
+
+.form label {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.form input,
+:global(.react-datepicker-wrapper),
+.form textarea {
+  width: 100%;
+  margin-top: 1.2rem;
+  padding: 0 auto;
+  background-color: #e1dfdd;
+  border: none;
+  outline: none;
+  padding-block: 0.6rem;
+  font-size: 2.4rem;
+}
+
+.row:last-child {
+  margin-left: auto;
+  display: flex;
+  place-items: center;
+  gap: 3.2rem;
+}
