@@ -34,6 +34,11 @@ export default function NewProjectForm({
       setCreateProject(false);
     }
   }
+
+  function handleCancel() {
+    setCreateProject(false);
+  }
+
   return (
     <form action="#" onSubmit={(e) => e.preventDefault()}>
       <div className={styles.row}>
@@ -56,7 +61,7 @@ export default function NewProjectForm({
         <DatePicker selected={date} onChange={(date) => setDate(date)} />
       </div>
       <div className={styles.row}>
-        <button>cancel</button>
+        <button onClick={handleCancel}>cancel</button>
         <Button onclick={handleSave}> Save </Button>
       </div>
     </form>

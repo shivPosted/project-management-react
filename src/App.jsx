@@ -57,7 +57,11 @@ function App() {
         />
       </Sidebar>
       {currentProject ? (
-        <Project project={currentProject} setProjects={setProjects} />
+        <Project
+          project={currentProject}
+          setProjects={setProjects}
+          setCurrentProject={setCurrentProject}
+        />
       ) : createProject ? (
         <NewProjectForm
           setProjects={setProjects}
