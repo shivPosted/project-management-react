@@ -1,4 +1,58 @@
-.button {
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 80%;
+  margin-top: 3.2rem !important;
+  margin: 0 auto;
+}
+.main > h2 {
+  font-size: 6.4rem;
+}
+
+.date {
+  font-size: 2.4rem;
+  color: #777;
+}
+
+.desc {
+  font-size: 3.2rem;
+}
+.tasks {
+  margin-top: 3.2rem;
+}
+.tasks button {
+  margin-left: 4.8rem;
+}
+.tasks h2 {
+  font-size: 2.4rem;
+}
+input {
+  width: 60%;
+  margin-top: 1.2rem;
+  padding: 0 auto;
+  background-color: #e1dfdd;
+  border: none;
+  outline: none;
+  padding-block: 0.6rem;
+  font-size: 2.4rem;
+}
+.task-list {
+  list-style: none;
+  font-size: 2.4rem;
+  margin-top: 1.6rem;
+}
+.main li {
+  display: flex;
+  place-items: center;
+  margin-bottom: 1rem;
+}
+
+.main li > button {
+  font-size: 3.2rem;
   outline: none;
   border: none;
+  margin-left: auto;
+  background-color: transparent;
+  cursor: pointer;
 }

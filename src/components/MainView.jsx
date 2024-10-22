@@ -2,7 +2,7 @@ import styles from "./MainView.module.css";
 import notask from "../assets/no-projects.png";
 import Button from "./Button";
 
-export default function MainView({ currentProject, children }) {
+export default function MainView({ children }) {
   return (
     <div className={styles.main}>
       <div className={styles["project-greetings"]}>

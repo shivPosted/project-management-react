@@ -70,7 +70,7 @@ function App() {
         />
       ) : (
         <MainView currentProject={currentProject}>
-          <Button onclick={() => setCreateProject(true)}>
+          <Button type="primary" onclick={() => setCreateProject(true)}>
             Create New Project
           </Button>
         </MainView>

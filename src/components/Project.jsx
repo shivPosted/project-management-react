@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Button from "./Button";
+import styles from "./Project.module.css";
 
 export default function Project({ project, setProjects, setCurrentProject }) {
   const [inputTask, setInputTask] = useState("");
@@ -32,17 +33,17 @@ export default function Project({ project, setProjects, setCurrentProject }) {
     setCurrentProject(null);
   }
   return (
-    <div>
+    <div className={styles.main}>
       <h2>{project.title}</h2>
-      <p>
+      <p className={styles.date}>
         {new Date(project.date).toLocaleString(navigator.language, {
           year: "numeric",
           month: "short",
           day: "numeric",
         })}
       </p>
-      <p>{project.description}</p>
-      <div>
+      <p className={styles.desc}>{project.description}</p>
+      <div className={styles.tasks}>
         <h2>Tasks</h2>
         <input
           value={inputTask}
@@ -53,7 +54,7 @@ export default function Project({ project, setProjects, setCurrentProject }) {
         <Button type="secondary" onclick={handleAddTask}>
           Add task
         </Button>
-        <ul>
+        <ul className={styles["task-list"]}>
           {tasks.map((task, i) => (
             <Task
               style={{ fontSize: "1.6rem" }}
