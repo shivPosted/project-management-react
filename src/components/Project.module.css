@@ -27,7 +27,7 @@
 .tasks h2 {
   font-size: 2.4rem;
 }
-input {
+.tasks input {
   width: 60%;
   margin-top: 1.2rem;
   padding: 0 auto;
@@ -36,6 +36,11 @@ input {
   outline: none;
   padding-block: 0.6rem;
   font-size: 2.4rem;
+  border-radius: 0.6rem;
+  padding-inline: 1rem;
+}
+.tasks input:focus {
+  outline: solid 3px blue;
 }
 .task-list {
   list-style: none;

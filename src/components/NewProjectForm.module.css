@@ -21,7 +21,9 @@
   border: none;
   outline: none;
   padding-block: 0.6rem;
+  padding-inline: 1rem;
   font-size: 2.4rem;
+  border-radius: 0.6rem;
 }
 
 .row:last-child {
